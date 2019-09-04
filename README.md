@@ -1,12 +1,20 @@
 # Trajectory Clustering Example with CUSPATIAL
 
-[CUSPATIAL](https://github.com/rapidsai/cuspatial) is a C++ library with python bindings that is based on [CUDA](https://en.wikipedia.org/wiki/CUDA) and [CUDF](https://github.com/rapidsai/cudf).
+[CUSPATIAL](https://github.com/zhangjianting/cuspatial) is a C++ library with python bindings that is based on [CUDA](https://en.wikipedia.org/wiki/CUDA) and [CUDF](https://github.com/rapidsai/cudf).
 CUSPATIAL provides significant GPU acceleration to common spatial and spatio-
 temporal operations such as point in polygon, distance between trajectories, and
 trajectory clustering. The speed-up ranges from 10x to 10000x for different
 operations.
 
 This repo shows an example of accelerating a clustering problem using CUSPATIAL on a real-world vehicle trajectory dataset. On this particualr use case, CUSPATIAL brings the end-2-end computation time from around 11 hours down to less than 15 seconds. 
+
+[//]: # (Image References)
+
+[AC]: ./images/AC.png "AC"
+[DB]: ./images/DB.png "DB"
+[LOCUST_HILL_EB]: ./images/LOCUST_HILL_EB.png "LOCUST_HILL_EB"
+[jitter_effect]: ./output_images/jitter_effect.png "jitter_effect"
+[moviepy_saveclip]: ./images/moviepy_saveclip.png "moviepy_saveclip"
 
 ## Problem Statement - Trajectory Clustering 
 
@@ -22,6 +30,12 @@ Given a specific similarity metric, different clustering algorithm will have dif
 In this trajectory clustering example, we work on a particular dataset which is description in the following sectio. We use `Hausdorff distance` as the similarity metric between trajectories. We compute the pairwise similarity matrix and apply agglomerativeClustering (AC) and DBSCAN afterwards.
 
 In this example, CUSPATIAL can significantly accelerate the computation of the `Hausdorff distance` similarity matrix. Comparing to the typical scikit-learning implimentation of `Hausdorff distance` (single CPU thread), CUSPATICAL reduces the computation time from about 11 hours to 7.9 seconds on this paticualr dataset.
+
+Since we pre-computed the smililarity matrix, we can experiment with different clustering algorithm and different hyperparamter sets much easier. In this example we do it in an interactive way using ipython widgets, you may play with the hyperparamter set and see how the clustering result responds. Below shows one example each for AC and DBSCAN:  
+
+![alt text][AC]
+
+![alt text][DB]
 
 ## Dataset Used
 
