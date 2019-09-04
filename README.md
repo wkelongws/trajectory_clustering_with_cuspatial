@@ -6,7 +6,7 @@ temporal operations such as point in polygon, distance between trajectories, and
 trajectory clustering. The speed-up ranges from 10x to 10000x for different
 operations.
 
-This repo shows an example of accelerating a clustering problem using CUSPATIAL on a real-world vehicle trajectory dataset. On this particualr use case, CUSPATIAL brings the end-2-end computation time from around 11 hours down to less than 15 seconds. 
+This repo shows an example of accelerating a clustering problem using CUSPATIAL on a real-world vehicle trajectory dataset. On this particular use case, CUSPATIAL brings the end-2-end computation time from around 11 hours down to less than 15 seconds. 
 
 [//]: # (Image References)
 
@@ -22,16 +22,16 @@ The trajectory clustering task is grouping a set of trajectories in such a way t
 
 The clustering task consists of two major components in general:
 
-1. Similarity Metirc
+1. Similarity Metric
 2. Searching Algorithm
 
-Given a specific similarity metric, different clustering algorithm will have different searching mechanism and different complexity. But in some case people may want to precompute all pairwise similarities. One of the many reasons could be people may need to perform multiple interations of hyperparamter search for the clustering algorithm to get a good result and we don't want to redo the time-consuming similarity computation each time. 
+Given a specific similarity metric, different clustering algorithm will have different searching mechanism and different complexity. But in some case people may want to precompute all pairwise similarities. One of the many reasons could be people may need to perform multiple iterations of hyperparameter search for the clustering algorithm to get a good result and we don't want to redo the time-consuming similarity computation each time. 
 
-In this trajectory clustering example, we work on a particular dataset which is description in the following sectio. We use `Hausdorff distance` as the similarity metric between trajectories. We compute the pairwise similarity matrix and apply agglomerativeClustering (AC) and DBSCAN afterwards.
+In this trajectory clustering example, we work on a particular dataset which is description in the following section. We use `Hausdorff distance` as the similarity metric between trajectories. We compute the pairwise similarity matrix and apply AgglomerativeClustering (AC) and DBSCAN afterwards.
 
-In this example, CUSPATIAL can significantly accelerate the computation of the `Hausdorff distance` similarity matrix. Comparing to the typical scikit-learning implimentation of `Hausdorff distance` (single CPU thread), CUSPATICAL reduces the computation time from about 11 hours to 7.9 seconds on this paticualr dataset.
+In this example, CUSPATIAL can significantly accelerate the computation of the `Hausdorff distance` similarity matrix. Comparing to the typical scikit-learn implementation of `Hausdorff distance` (single CPU thread), CUSPATICAL reduces the computation time from about 11 hours to 7.9 seconds on this particular dataset.
 
-Since we pre-computed the smililarity matrix, we can experiment with different clustering algorithm and different hyperparamter sets much easier. In this example we do it in an interactive way using ipython widgets, you may play with the hyperparamter set and see how the clustering result responds. Below shows one example each for AC and DBSCAN:  
+Since we pre-computed the similarity matrix, we can experiment with different clustering algorithm and different hyperparameter sets much easier. In this example we do it in an interactive way using ipython widgets, you may play with the hyperparameter set and see how the clustering result responds. Below shows one example each for AC and DBSCAN:  
 
 ![alt text][AC]
 
