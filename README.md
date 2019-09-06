@@ -1,6 +1,6 @@
 # Trajectory Clustering Example with CUSPATIAL
 
-[CUSPATIAL](https://github.com/zhangjianting/cuspatial) is a C++ library with python bindings that is based on [CUDA](https://en.wikipedia.org/wiki/CUDA) and [CUDF](https://github.com/rapidsai/cudf).
+[CUSPATIAL](https://github.com/rapidsai/cuspatial) is a C++ library with python bindings that is based on [CUDA](https://developer.nvidia.com/cuda-zone) and [CUDF](https://github.com/rapidsai/cudf).
 CUSPATIAL provides significant GPU acceleration to common spatial and spatio-
 temporal operations such as point in polygon, distance between trajectories, and
 trajectory clustering. The speed-up ranges from 10x to 10000x for different
@@ -55,3 +55,12 @@ The real-world trajectory dataset we used here for this example is collected fro
 * Create trajectories based on vehicle id. 
 
 A python pickle file (created using python 3.7) of this dataset can be downloaded [here](https://drive.google.com/file/d/1GE-_z9HgLp3eV7Lgo_KOl53QuMgiCUMS/view?usp=sharing). 
+
+
+## Install Dependencies
+
+1. cuSPATIAL: [instructions](https://github.com/rapidsai/cuspatial/blob/branch-0.10/README.md#compile--install-c-backend)
+2. scikit-image: 	`pip install scikit-image` (DO NOT use conda install)
+3. opencv: 			`conda install -c conda-forge opencv`
+4. ipywidgets: 		`conda install -c anaconda ipywidgets`
+5. scikit-learn: 	`conda install -c anaconda scikit-learn`
