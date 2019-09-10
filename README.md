@@ -37,7 +37,7 @@ In this trajectory clustering example, we work on a particular vehicle trajector
 
 We use `Hausdorff distance` as the similarity metric between trajectories. We compute the pairwise similarity matrix and apply AgglomerativeClustering (AC) and DBSCAN afterwards.
 
-In this example, CUSPATIAL can significantly accelerate the computation of the `Hausdorff distance` similarity matrix. Comparing to the typical scikit-learn implementation of `Hausdorff distance` (single CPU thread), CUSPATICAL reduces the computation time from about 11 hours to 7.9 seconds on this particular dataset.
+In this example, CUSPATIAL can significantly accelerate the computation of the `Hausdorff distance` similarity matrix. Comparing to the typical scikit-learn implementation of `Hausdorff distance` (single CPU thread), CUSPATICAL reduces the computation time from about 5 hours to 13.5 seconds on this particular dataset.
 
 Since we pre-computed the similarity matrix, we can experiment with different clustering algorithm and different hyperparameter sets much easier. In this example we do it in an interactive way using ipython widgets, you may play with the hyperparameter set and see how the clustering result responds. Below shows one example each for AC and DBSCAN:  
 
@@ -56,6 +56,7 @@ The real-world trajectory dataset we used here for this example is collected fro
 
 A python pickle file (created using python 3.7) of this dataset can be downloaded [here](https://drive.google.com/file/d/1GE-_z9HgLp3eV7Lgo_KOl53QuMgiCUMS/view?usp=sharing). 
 
+This dataset is part of a city-wide traffic video database which is developed to support various smart city and smart traffic research tasks (see [AI City Challenge](https://www.aicitychallenge.org/) for more details).
 
 ## Install Dependencies
 
