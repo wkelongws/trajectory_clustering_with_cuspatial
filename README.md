@@ -1,6 +1,8 @@
 # Trajectory Clustering Example with CUSPATIAL
 
-This work was done with cuspatial v0.10 (coupled with this [article](https://medium.com/rapids-ai/releasing-cuspatial-to-accelerate-geospatial-and-spatiotemporal-processing-b686d8b32a9)) and may not work as is with newer version of cuspatial. We encourage you to check the [offical cuspatial repo](https://github.com/rapidsai/cuspatial/) for updates. This repo can still serve well as a quickstart read for beginners. 
+#### Note: This work was done with cuspatial v0.10 (coupled with this [article](https://medium.com/rapids-ai/releasing-cuspatial-to-accelerate-geospatial-and-spatiotemporal-processing-b686d8b32a9)) and may not work as is with newer version of cuspatial. We encourage you to check the [offical cuspatial repo](https://github.com/rapidsai/cuspatial/) for updates. This repo can still serve well as a quickstart read for beginners. 
+
+------------------
 
 [CUSPATIAL](https://github.com/rapidsai/cuspatial) is a C++ library with python bindings that is based on [CUDA](https://developer.nvidia.com/cuda-zone) and [CUDF](https://github.com/rapidsai/cudf).
 CUSPATIAL provides significant GPU acceleration to common spatial and spatio-
